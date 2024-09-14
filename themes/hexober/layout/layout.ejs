@@ -5,20 +5,19 @@
   <s-page id="mainPage" theme="auto">
     <s-drawer id="mainDrawer">
       <% if (config.nav) { %>
-        <div class="mainNav" slot="start">
+        <div class="mainDrawerNav" slot="start">
           <%- include('nav.ejs') %>
         </div>
       <% } %>
-      <div style="height: 100vh;">
+      <div class="mainDrawerContent">
         <%- include('header.ejs') %>
-        <s-scroll-view style="height: 100%;">
-          <div style="height: auto;">
+        <s-scroll-view class="mainScrollView">
+          <div style="flex-grow: 1;">
             <main class="mainContent">
               <%- body %>
             </main>
-            <footer>
-              <p>&copy; <%= new Date().getFullYear() %> <%= config.author %></p>
-            </footer>
+            <!-- <s-divider style="padding: 0px; margin: 0px;"></s-divider> -->
+            <%- include('footer.ejs') %>
           </div>
         </s-scroll-view>
       </div>
