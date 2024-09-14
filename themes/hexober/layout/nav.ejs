@@ -1,9 +1,9 @@
 <% if (config.nav.author) { %>
-<div class="author-container">
+<div id="authorContainer" class="author-container">
     <% if (config.nav.author.homepage) { %>
     <a href="<%= config.nav.author.homepage %>" target="_blank">
     <% } %>
-        <img class="author-avatar" src="<%= config.nav.author.avatar %>" >
+        <img id="authorAvatar" class="author-avatar" src="<%= config.nav.author.avatar %>" crossorigin="anonymous">
     <% if (config.nav.author.homepage) { %>
     </a>
     <% } %>
@@ -19,14 +19,18 @@
     <% if (config.nav.author.socials) { %>
         <div class="author-social-container">
             <% config.nav.author.socials.forEach(function(social) { %>
+                <% if (social.title) { %>
                 <s-tooltip>
+                <% } %>
                     <s-icon-button slot="trigger" onclick="window.open('<%= social.url %>')">
                         <s-icon>
                             <%- read_svg(url_for(social.icon)) %>
                         </s-icon>
                     </s-icon-button>
-                    <%= social.title %>
+                <% if (social.title) { %>
+                <%= social.title %>    
                 </s-tooltip>
+                <% } %>
             <% }); %>
         </div>
     <% } %>

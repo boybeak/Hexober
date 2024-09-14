@@ -10,8 +10,36 @@
             <%= config.title %>
         </a>
     </div>
-    <s-icon-button slot="action">
-        <s-icon type="search"></s-icon>
-    </s-icon-button>
+    <% if (config.menu) { %>
+        <% config.menu.forEach((item) => { %>
+            <% if (item.title) { %>
+            <s-tooltip slot="action">
+                <s-icon-button slot="trigger" onclick="window.open('<%= item.url %>')">
+                    <s-icon>
+                        <%- read_svg(url_for(item.icon)) %>
+                    </s-icon>
+                </s-icon-button>   
+                <%= item.title %>
+            </s-tooltip>
+            <% } else { %>
+                <s-icon-button slot="action" onclick="window.open('<%= item.url %>')">
+                    <s-icon>
+                        <%- read_svg(url_for(item.icon)) %>
+                    </s-icon>
+                </s-icon-button> 
+            <% } %>
+        <% }) %>
+    <% } %>
+    
+    <% if (config.showThemeToggle != false) { %>
+    <s-tooltip slot="action">
+        <s-icon-button id="themeToggleBtn" slot="trigger">
+            <s-icon>
+                <%- read_svg(url_for(theme.themeToggle.auto), true) %>
+            </s-icon>
+        </s-icon-button>
+        Auto
+    </s-tooltip>
+    <% } %>
 </s-appbar>
 </header>

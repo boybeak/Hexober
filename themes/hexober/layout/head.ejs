@@ -1,10 +1,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <% if (config.logo) { %>
+        <link rel="icon" href="<%= url_for(config.logo) %>" type="image/*">
+    <% } %>
+    
     <title>
         <%= config.title %>
     </title>
+    
     <script src="https://unpkg.com/sober/dist/sober.min.js"></script>
+    <script src="<%= url_for('js/color-thief.umd.js') %>"></script>
     <script src="<%= url_for('js/layout.js') %>"></script>
 
     <link rel="stylesheet" href="<%= url_for('css/layout.css') %>">

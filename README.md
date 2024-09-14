@@ -6,6 +6,8 @@ npm install hexo-prism-plugin --save
 ```
 
 ```yml
+logo: '/assets/logo.svg'
+
 syntax_highlighter: prismjs
 
 prism_plugin:
