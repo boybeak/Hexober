@@ -1,0 +1,12 @@
+<div class="articleList">
+    <h2>Welcome to my blog!</h2>
+    <ul>
+        <% site.posts.each(function(post){ %>
+            <li>
+                <a href="<%= url_for(post.path) %>">
+                    <%= post.title %>
+                </a>
+            </li>
+        <% }); %>
+    </ul>
+</div>

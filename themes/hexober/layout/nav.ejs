@@ -1,0 +1,35 @@
+<% if (config.nav.author) { %>
+<div class="author-container">
+    <% if (config.nav.author.homepage) { %>
+    <a href="<%= config.nav.author.homepage %>" target="_blank">
+    <% } %>
+        <img class="author-avatar" src="<%= config.nav.author.avatar %>" >
+    <% if (config.nav.author.homepage) { %>
+    </a>
+    <% } %>
+
+    <% if (config.nav.author.homepage) { %>
+    <a href="<%= config.nav.author.homepage %>" target="_blank" style="text-decoration: none; color: inherit;">
+    <% } %>
+        <b class="author-name"><%= config.nav.author.name %></b>
+    <% if (config.nav.author.homepage) { %>
+    </a>
+    <% } %>
+
+    <% if (config.nav.author.socials) { %>
+        <div class="author-social-container">
+            <% config.nav.author.socials.forEach(function(social) { %>
+                <s-tooltip>
+                    <s-icon-button slot="trigger" onclick="window.open('<%= social.url %>')">
+                        <s-icon>
+                            <%- read_svg(url_for(social.icon)) %>
+                        </s-icon>
+                    </s-icon-button>
+                    <%= social.title %>
+                </s-tooltip>
+            <% }); %>
+        </div>
+    <% } %>
+</div>
+<s-divider style="width: 100%; margin: 0px; padding: 0px;"></s-divider>
+<% } %>

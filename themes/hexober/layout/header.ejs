@@ -1,0 +1,17 @@
+<header>
+<s-appbar>
+    <% if (config.nav) { %>
+        <s-icon-button id="appbarNavBtn" slot="navigation">
+            <s-icon type="menu"></s-icon>
+        </s-icon-button>
+    <% } %>
+    <div slot="headline">
+        <a href="<%= url_for('/') %>" style="text-decoration: none; color: inherit;">
+            <%= config.title %>
+        </a>
+    </div>
+    <s-icon-button slot="action">
+        <s-icon type="search"></s-icon>
+    </s-icon-button>
+</s-appbar>
+</header>

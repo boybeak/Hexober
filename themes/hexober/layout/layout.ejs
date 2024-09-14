@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<%- include('head.ejs') %>
+<body>
+  <s-page theme="auto">
+    <s-drawer id="mainDrawer">
+      <% if (config.nav) { %>
+        <div class="mainNav" slot="start">
+          <%- include('nav.ejs') %>
+        </div>
+      <% } %>
+      <div style="height: 100vh;">
+        <%- include('header.ejs') %>
+        <s-scroll-view style="height: 100%;">
+          <div style="height: auto;">
+            <main class="mainContent">
+              <%- body %>
+            </main>
+            <footer>
+              <p>&copy; <%= new Date().getFullYear() %> <%= config.author %></p>
+            </footer>
+          </div>
+        </s-scroll-view>
+      </div>
+      
+    </s-drawer>
+  </s-page>
+</body>
+<script>
+  onPageReady()
+</script>
+</html>
