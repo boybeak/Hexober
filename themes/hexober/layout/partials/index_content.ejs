@@ -1,10 +1,24 @@
 <div class="articleList">
+    <% if (page.tag) { %>
+    <h2>
+        <s-icon>
+            <%- read_svg(url_for('assets/ic-tag.svg'), true) %>
+        </s-icon>
+        <%= page.tag %>
+    </h2>
+    <% } %>
+    <% if (page.category) { %>
+        <h2>
+            <s-icon>
+                <%- read_svg(url_for('assets/ic-category.svg'), true) %>
+            </s-icon>
+            <%= page.category %>
+        </h2>
+    <% } %>
     <ul>
         <% page.posts.each(function(post){ %>
             <li>
-                <a href="<%= url_for(post.path) %>">
-                    <%- include('post_item', { post: post }) %>
-                </a>
+                <%- include('post_item', { post: post }) %>
             </li>
         <% }); %>
     </ul>

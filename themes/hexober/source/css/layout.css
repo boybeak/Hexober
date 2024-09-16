@@ -73,6 +73,8 @@ body {
 
 .articleList ul {
   flex-grow: 1;
+  list-style-type: none;
+  padding-left: 0; /* 可选：去掉左侧内边距，以完全移除缩进 */
 }
 
 .articleListIndexBar {

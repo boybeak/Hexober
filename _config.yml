@@ -137,3 +137,7 @@ menu:
     url: 'https://boybeak.github.io/'
 
 showThemeToggle: true
+
+excerpt:
+  more: true  # 启用 <!-- more --> 注释来生成摘要
+  length: 200 # 设置摘要的字符长度

@@ -1,8 +1,50 @@
-<div>
-    <h3>
-        <%= post.title %>
+<div style="margin-bottom: 8px;">
+    <h3 style="text-decoration: underline;">
+        <a href="<%= url_for(post.path) %>" style="text-decoration: none; color: inherit;">
+            <%= post.title %>
+        </a>
     </h3>
-    <p>
+    <div>
         <%= post.excerpt %>
-    </p>
+    </div>
+    <% if (post.categories.length && post.tags.length) { %>
+    <div style="display: flex; flex-direction: row;">
+        <% if (post.categories.length) { %>
+            <p>
+                <s-icon style="width: 16px; height: 16px;">
+                    <%- read_svg(url_for('assets/ic-category.svg'), true) %>
+                </s-icon>
+                <% post.categories.forEach(function(category, index) { %>
+                    <small>
+                    <b>
+                        <a href="<%= url_for(category.path) %>" style="text-decoration: none; color: inherit;">
+                            <%= category.name %>
+                        </a>
+                    </b>
+                    </small>
+                    <% if (index < post.categories.length - 1) { %>&nbsp;<% } %>
+                            <% }); %>
+            </p>
+        <% } %>
+    
+        <% if (post.tags.length) { %>
+            <p style="margin-left: 16px;">
+                <s-icon style="width: 16px; height: 16px;">
+                    <%- read_svg(url_for('assets/ic-tag.svg'), true) %>
+                </s-icon>
+                <% post.tags.forEach(function(tag, index) { %>
+                    <small>
+                    <b>
+                        <a href="<%= url_for(tag.path) %>" style="text-decoration: none; color: inherit;">
+                            <%= tag.name %>
+                        </a>
+                    </b>
+                    </small>
+                    <% if (index < post.tags.length - 1) { %>&nbsp;<% } %>
+                            <% }); %>
+            </p>
+        <% } %>
+    </div>
+    <% } %>
+    
 </div>
