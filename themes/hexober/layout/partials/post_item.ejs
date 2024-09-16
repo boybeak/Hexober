@@ -8,6 +8,10 @@
         <%- post.excerpt %>
     </div>
 
+    <% if (post.photos) { %>
+        <%- include('gallery', { photos: post.photos }) %>
+    <% } %>
+
     <div style="display: flex; flex-direction: row; margin-top: 8px;">
         <div style="margin-right: 8px;">
             <s-icon style="width: 16px; height: 16px;">
