@@ -20,8 +20,10 @@ body {
 }
 
 .mainContent {
+  display: flex;
+  flex-direction: column;
   flex-grow: 1;
-  min-height: calc(100vh - 48px);
+  min-height: calc(100vh - 64px);
   padding: 24px;
 }
 
@@ -60,4 +62,21 @@ body {
   flex-wrap: wrap;
 
   margin-top: 8px;
+}
+
+.articleList {
+  display: flex;
+  flex-direction: column;
+
+  flex-grow: 1;
+}
+
+.articleList ul {
+  flex-grow: 1;
+}
+
+.articleListIndexBar {
+  display: flex;
+  justify-content: space-between; /* 两端对齐 */
+  align-items: center; /* 垂直居中（可选） */
 }

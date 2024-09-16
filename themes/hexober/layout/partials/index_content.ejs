@@ -1,12 +1,19 @@
 <div class="articleList">
-    <h2>Welcome to my blog!</h2>
     <ul>
-        <% site.posts.each(function(post){ %>
+        <% page.posts.each(function(post){ %>
             <li>
                 <a href="<%= url_for(post.path) %>">
-                    <%= post.title %>
+                    <%- include('post_item', { post: post }) %>
                 </a>
             </li>
         <% }); %>
     </ul>
-</div>
+    <div class="articleListIndexBar">
+        <s-icon-button onclick="gotoPage('<%= page.prev %>')" <% if (page.prev <= 0) { %> disabled="true" <% } %>>
+            <s-icon type="chevron_left"></s-icon>
+        </s-icon-button>
+        <s-icon-button onclick="gotoPage('<%= page.next %>')" <% if (page.next <= 0) { %> disabled="true" <% } %>>
+            <s-icon type="chevron_right"></s-icon>
+        </s-icon-button>
+    </div>
+</div> 

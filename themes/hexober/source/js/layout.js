@@ -47,3 +47,11 @@ function onPageReady() {
         }
     }
 }
+
+function gotoPage(page) {
+    if (page == 1) {
+        window.location.href = window.location.origin
+        return
+    }
+    window.location.href = window.location.origin + '/page/' + page
+}
