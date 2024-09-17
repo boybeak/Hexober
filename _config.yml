@@ -140,6 +140,9 @@ hexober:
       url: '/about'
       
   showThemeToggle: true
+  # googleAnalytics: G-XXXXXXXXXX
+  # googleSiteVerification: XXXXXXXXX-XXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
 
 excerpt:
   enable: true
