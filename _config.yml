@@ -114,29 +114,27 @@ deploy:
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
 theme: hexober
-
-nav:
-  author:
-    name: 'boybeak'
-    avatar: 'https://avatars.githubusercontent.com/u/6696502?v=4'
-    homepage: 'https://github.com/boybeak'
-    socials:
-      - title: 'Github'
-        url: 'https://github.com/boybeak'
-        icon: '/assets/ic-github.svg'
-      - title: 'X'
-        url: 'https://x.com/BeakInAir'
-        icon: '/assets/ic-x-twitter.svg'
-      - title: 'Email'
-        url: 'mailto://boybeak@gmail.com'
-        icon: '/assets/ic-mail.svg'
-
-menu:
-  - title: 'MyBlog'
-    icon: '/assets/ic-blog.svg'
-    url: 'https://boybeak.github.io/'
-
-showThemeToggle: true
+hexober:
+  nav:
+    author:
+      name: 'boybeak'
+      avatar: 'https://avatars.githubusercontent.com/u/6696502?v=4'
+      homepage: 'https://github.com/boybeak'
+      socials:
+        - title: 'Github'
+          url: 'https://github.com/boybeak'
+          icon: '/assets/ic-github.svg'
+        - title: 'X'
+          url: 'https://x.com/BeakInAir'
+          icon: '/assets/ic-x-twitter.svg'
+        - title: 'Email'
+          url: 'mailto://boybeak@gmail.com'
+          icon: '/assets/ic-mail.svg'
+  menu:
+    - title: 'MyBlog'
+      icon: '/assets/ic-blog.svg'
+      url: 'https://boybeak.github.io/'
+  showThemeToggle: true
 
 excerpt:
   enable: true

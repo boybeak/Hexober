@@ -1,10 +1,12 @@
+<% var hexober = config.hexober; %>
+
 <!DOCTYPE html>
 <html>
 <%- include('head.ejs') %>
 <body>
   <s-page id="mainPage" theme="auto">
     <s-drawer id="mainDrawer">
-      <% if (config.nav) { %>
+      <% if (hexober.nav) { %>
         <div class="mainDrawerNav" slot="start">
           <%- include('nav.ejs') %>
         </div>

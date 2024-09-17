@@ -1,6 +1,8 @@
+<% var hexober = config.hexober; %>
+
 <header>
 <s-appbar>
-    <% if (config.nav) { %>
+    <% if (hexober.nav) { %>
         <s-icon-button id="appbarNavBtn" slot="navigation">
             <s-icon type="menu"></s-icon>
         </s-icon-button>
@@ -10,8 +12,8 @@
             <%= config.title %>
         </a>
     </div>
-    <% if (config.menu) { %>
-        <% config.menu.forEach((item) => { %>
+    <% if (hexober.menu) { %>
+        <% hexober.menu.forEach((item) => { %>
             <% if (item.title) { %>
             <s-tooltip slot="action">
                 <s-icon-button slot="trigger" onclick="window.open('<%= item.url %>')">
@@ -31,7 +33,7 @@
         <% }) %>
     <% } %>
     
-    <% if (config.showThemeToggle != false) { %>
+    <% if (hexober.showThemeToggle != false) { %>
     <s-tooltip slot="action">
         <s-icon-button id="themeToggleBtn" slot="trigger">
             <s-icon>
