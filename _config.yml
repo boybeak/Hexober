@@ -130,10 +130,15 @@ hexober:
         - title: 'Email'
           url: 'mailto://boybeak@gmail.com'
           icon: '/assets/ic-mail.svg'
+
   menu:
     - title: 'MyBlog'
       icon: '/assets/ic-blog.svg'
       url: 'https://boybeak.github.io/'
+    - title: 'About'
+      icon: '/assets/ic-about.svg'
+      url: '/about'
+      
   showThemeToggle: true
 
 excerpt:

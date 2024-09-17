@@ -16,7 +16,7 @@
         <% hexober.menu.forEach((item) => { %>
             <% if (item.title) { %>
             <s-tooltip slot="action">
-                <s-icon-button slot="trigger" onclick="window.open('<%= item.url %>')">
+                <s-icon-button slot="trigger" onclick="window.open('<%= url_for(item.url) %>')">
                     <s-icon>
                         <%- read_svg(url_for(item.icon)) %>
                     </s-icon>
@@ -24,7 +24,7 @@
                 <%= item.title %>
             </s-tooltip>
             <% } else { %>
-                <s-icon-button slot="action" onclick="window.open('<%= item.url %>')">
+                <s-icon-button slot="action" onclick="window.open('<%= url_for(item.url) %>')">
                     <s-icon>
                         <%- read_svg(url_for(item.icon)) %>
                     </s-icon>
